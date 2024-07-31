@@ -1,0 +1,273 @@
+.titulop{
+    border-radius: 5px;
+    /* color:#302283; */
+    color:#BC9FF0;
+    padding: 1em;
+    
+  }
+  .titulop h1{
+    font-size: 50px;
+    font-weight: bolder;
+  }
+  
+  .cambiardatos{
+    display: grid;
+    grid-template-columns: 100px [line2] 250px [line3];
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #5e039780;
+    width: 375px;
+    margin-left: 5em;
+  }
+  .cambiardatos:hover{
+    background-color: #5e0397;
+  }
+  
+  .cambiarcontraseña{
+    display: grid;
+    grid-template-columns: [first] 100px [line2] 250px [line3];
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #5e039780;
+    column-gap: 5px;
+    width: 375px;
+    margin-top: 1em;
+    margin-left: 5em;
+  }
+  
+  .contracd{
+    font-size: 100px;
+  }
+  .pcd{
+    font-size:30px;
+  }
+  
+  
+  .soportecd{
+    font-size: 80px;
+  }
+  .cerrarsesion{
+    margin: 2em;
+  }
+  .soporte{
+    display: grid;
+    grid-template-columns: [first] 100px [line2] 250px [line3];
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #5e039780;
+    column-gap: 5px;
+    width: 375px;
+    margin-top: 1em;
+    margin-left: 5em;
+  }
+  .soporte:hover{
+    background-color: #5e0397;
+  }
+  .offcd{
+    font-size: 40px;
+  }
+  .offpcd{
+    font-size: 15px;
+  }
+  .admin{
+    display: grid;
+    grid-template-columns: [first] 50px [line2] 250px [line3];
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background-color: #5e039780;
+    column-gap: 5px;
+    width: 375px;
+    margin-top: 1em;
+    margin-left: 5em;
+  }
+  .admin:hover{
+    background-color: #5e0397;
+  }
+  
+  @media (min-width:728px){
+    .titulop{
+      border-radius: 5px;
+      color:#BC9FF0;
+      padding: 1em;
+      
+    }
+    .titulop h1{
+      font-size: 50px;
+      font-weight: bolder;
+    }
+
+
+
+    .containerun{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      column-gap: 5px;
+      width: 100%;
+      min-height: 60vh;
+    }
+    .cardadminu{
+      background-image: url(../images/listadousuarios.jpg);
+      background-size: contain;
+      min-height: 30vh;
+      width: 100%;
+      margin-bottom: 3.5em;
+    }
+    .adminbutton{
+      background-color: #5e039780;
+      width: 300px;
+      display: grid;
+      grid-template-columns: 50px 200px;
+      border-radius: 5px;
+      column-gap: 5px;
+      justify-content: center;
+      align-content: center;
+    }
+    .adminbutton:hover{
+      background-color: #5e0397;
+    }
+
+
+    .cardcambiardatosu{
+      background-image: url(../images/datos.jpg);
+      background-size: contain;
+      min-height: 30vh;
+      width: 100%;
+      margin-bottom: 3.5em;
+    }
+    .modaldatosu button{
+      border-radius: 5px;
+      justify-content: center;
+      align-content: center;
+      font-size: 50px;
+      width: 500px;
+    }
+    .cambiarcontrau{
+      background-image: url(../images/contraseña.jpg);
+      background-size: contain;
+      min-height: 30vh;
+      width: 100%;
+      margin-bottom: 3.5em;
+    }
+    .modalsoporteu{
+      font-size: 50px;
+    }    
+    .modalcontrau{
+      font-size: 50px;
+    }
+    .cardsoporteu{
+      background-image: url(../images/soporte.jpg);
+      background-size: contain;
+      min-height: 30vh;
+      width: 100%;
+      margin-bottom: 3.55em;
+    }
+    .usercdu{
+      font-size: 100px;
+    }
+    .contracdu{
+      font-size: 100px;
+    }
+    .pcdu{
+      font-size:30px;
+    }
+    
+    .soporteu{
+      background-color: #5e039780;
+      width: 350px;
+      display: grid;
+      grid-template-columns: 50px 200px;
+      border-radius: 5px;
+      column-gap: 5px;
+      justify-content: center;
+      align-content: center;
+    }
+    .soporteu:hover{
+      background-color: #5e0397;
+    }
+    .soportecdu{
+      font-size: 80px;
+    }
+
+
+
+
+    .containeru{
+      display: grid;
+      grid-template-areas:
+      "c1 c2 c3" ;
+    }
+
+
+    .cardcambiardatos{
+      background-image: url(../images/datos.jpg);
+      background-size: cover;
+      min-height: 50vh;
+      width: 100%;
+    }
+    .modaldatos{
+      margin-top:385px;
+    }
+    .cambiarcontra{
+      background-image: url(../images/contraseña.jpg);
+      background-size: cover;
+      min-height: 50vh;
+      width: 100%;
+    }
+    .modalcontra{
+      margin-top:385px;
+    }
+    .cardsoporte{
+      background-image: url(../images/soporte.jpg);
+      background-size: cover;
+      min-height: 50vh;
+      width: 100%;
+    }
+    .cardadmin{
+      width: 100%;
+    }
+    .modalsoporte{
+      margin-top:405px;
+    }
+    .usercd{
+      font-size: 130px;
+    }
+    .contracd{
+      font-size: 100px;
+    }
+    .pcd{
+      font-size:30px;
+    }
+    
+    .soporte{
+      display: grid;
+      grid-template-columns: [first] 100px [line2] 250px [line3];
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      background-color: #5e039780;
+      column-gap: 5px;
+      width: 375px;
+      margin-top: 1em;
+      margin-left: 5em;
+      grid-area: c1;
+    }
+    .soporte:hover{
+      background-color: #5e0397;
+    }
+    .soportecd{
+      font-size: 80px;
+    }
+    .cerrarsesion{
+      margin: 2em;
+    }
+    .offcd{
+      font-size: 20px;
+    }
+    .offpcd{
+      font-size: 15px;
+    }
+  }

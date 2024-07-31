@@ -1,0 +1,121 @@
+.titulo {
+  text-align: center;
+}
+.titulo h1 {
+  margin-bottom: 0.5em;
+  font-family: Georgia, serif;
+  color: #8F6F24;
+  /* font-weight: bolder; */
+  font-size: 40px;
+}
+.pagina {
+  display: grid;
+  grid-template-columns: 1fr;
+  height: auto;
+  margin: 1em;
+}
+
+.url {
+  border: #264295 solid 0.3em;
+  padding: 2em;
+  margin: 1em;
+  border-radius: 5px;
+}
+
+.input-container {
+  position: relative;
+  margin-top: 2em;
+}
+
+.input-field {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.8s;
+}
+input[type="text"]:focus {
+  outline: none;
+  border-color: #FFC107;
+}
+
+.input-field label {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 16px;
+  pointer-events: none;
+  transition: top 0.3s, font-size 0.3s, color 0.3s;
+  background-color: white;
+  padding: 0 5px;
+}
+
+.input-field input:focus + label,
+.input-field input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: #FFC107;
+}
+
+.qrcomponent {
+  border: #A471CA solid 0.3em;
+  padding: 2em;
+  margin: 1em;
+  border-radius: 5px;
+}
+
+.qrcontenido {
+  border: #A471CA solid 0.3em;
+  padding: 2em;
+  margin: 1em;
+  border-radius: 5px;
+}
+.grupo1,
+.grupo2,
+.grupo3 {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background-color: #26429590;
+  padding: 0.5em;
+  border-radius: 5px;
+  font-size: 25px;
+}
+
+@media (min-width: 728px) {
+  .titulo {
+    text-align: center;
+  }
+  .pagina {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: auto;
+    margin: 1em;
+  }
+  .url {
+    border: #5d03a190 solid 0.3em;
+    padding: 2em;
+    margin: 1em;
+    border-radius: 5px;
+  }
+  .input-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5d03a190;
+  }
+  .guardarqrr{
+    width: 80%;
+    min-height: 20px;
+    justify-content: center;
+  }
+}

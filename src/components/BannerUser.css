@@ -1,0 +1,17 @@
+.banneruser{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    }
+.banneruser p{
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 20px;
+    border:#A471CA solid 0.1em;
+    color: aliceblue;
+}
+.banneruser p img{
+    width: 50px;
+    padding: 5px;
+}

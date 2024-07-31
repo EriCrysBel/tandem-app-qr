@@ -1,0 +1,115 @@
+.cardi{
+  width: 100%;
+  min-height: 50vh;
+}
+.imagenacceso{
+  height: auto;
+  width: 100%;
+}
+
+.buttonacceso{
+  box-shadow: 3px 3px 3px 1px rgb(80, 78, 78);
+}
+.buttonacceso p{
+  font-size: 20px;
+  color: #ffffff;
+  font-family: Century Gothic, serif; 
+  font-weight: bold;
+}
+
+.eslogani{
+  font-size: 10px;
+  padding: .2em;
+  color: #264295;
+  border:#EEF6FC;
+  background-Color: #bcdbf3;
+  border-Radius:10px;
+  position: absolute;
+  bottom: 73px;
+  text-align: center;
+  justify-content:center;
+font-family: Century Gothic, serif;
+}
+.cardsubtitule{
+  position: relative;
+}
+@media (max-width:600px){
+  .cardi{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+  }
+  .imagenacceso{
+    height: auto;
+    width: 100%;
+  }
+  
+  .buttonacceso{
+    box-shadow: 3px 3px 3px 1px rgb(80, 78, 78);
+    left: 160px;
+  }
+  .buttonacceso p{
+    font-size: 20px;
+    color: #ffffff;
+  }
+  
+  .eslogani{
+  
+    font-size: 21px;
+    padding: .2em;
+    color: #264295;
+    border:#EEF6FC;
+    background-Color: #bcdbf3;
+    border-Radius:10px;
+    position: absolute;
+    bottom: 35px;
+    left: 52px;
+    text-align: center;
+    justify-content:center;
+  }
+  .cardsubtitule{
+    height: 50vh;
+    position: relative;
+  }
+  
+  
+}
+
+@media (min-width:728px){
+.cardi{
+  min-height: 100vh;
+}
+.imagenacceso{
+  height: 550px;
+  width: 100%;
+}
+
+.buttonacceso{
+  left: 250px;
+  box-shadow: 3px 3px 3px 1px rgb(80, 78, 78);
+}
+.buttonacceso p{
+  font-size: 30px;
+  margin-inline: 20px;
+  color: white;
+}
+
+.eslogani{
+  width: 100%;
+  font-size: 30px;
+  padding: .2em;
+  color: #264295;
+  border:#EEF6FC;
+  background-color: #bcdbf3;
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  text-align: center;
+  justify-content:center;
+}
+.cardsubtitule{
+  height: 70vh;
+  position: relative;
+}
+}

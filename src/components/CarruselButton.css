@@ -1,0 +1,12 @@
+.carrusel-text, .carousel-caption, .carousel-item {
+  font-family: Century Gothic, serif;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.743)!important;
+  border-radius: 15px;
+  font-size: 25px;
+}
+
+.carousel-item {
+  background-color: #6d169c75 !important;
+  text-align: center;
+}

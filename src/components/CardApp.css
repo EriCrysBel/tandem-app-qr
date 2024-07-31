@@ -1,0 +1,49 @@
+.creacionqr{
+    margin-top: 0.1em;
+    text-align: center;
+    font-family: Georgia, serif;
+    color: #8F6F24;
+}
+.crearpage{
+    font-family: Century Gothic, serif;
+    font-size: 20px;
+}
+.texto{
+    font-family: Lato, Open Sans, sans-serif;
+}
+.text-center {
+    text-align: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+.no-border {
+    border: none;
+}
+#card1{
+    margin-bottom: 0.4em;
+}
+.imagen1{
+    margin-left: 8em;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 270px;
+    height: auto;
+    border-bottom: 5em;
+}
+.imagen2{
+    margin-left: 7em;
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px;
+    height: auto;
+}

@@ -1,0 +1,63 @@
+.loginform{
+    background-color:#92cbf773;
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+    border: #02355c solid 0.2em;
+  }
+  
+  .h1login{
+    color: #02355c;
+    text-decoration: underline;
+    grid-area: h1;
+  }
+  .btnlogin{
+  font-size: 20px;
+  }
+  .formu{
+  grid-area: formu;
+  }
+  .registro{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+  }
+  @media (min-width:728px){
+    .h1login{
+      color: #02355C;
+      text-decoration: underline;
+      grid-area: h1;
+      display: flex;
+      justify-content: end;
+    }
+    .h1login h1{
+      font-size: 50px;
+      justify-self: end;
+    }
+  .loginform{
+    background-image: url(../images/accesologin.png);
+    background-size:cover;
+    min-height: 73vh;
+    display: grid;
+    grid-template-areas:
+    "h1 h1 h1 h1 h1" 
+    ". . . . formu"
+    ". . . . .";
+    background-color: transparent;
+    border: none;
+  }
+  .formu{
+    background-color:#92cbf773;
+    padding: 1.5em;
+    height: auto;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+  .formu label{
+    font-weight: bolder;
+  }
+  .registro{
+    display: grid;
+    grid-template-columns: 400px 200px;
+    margin-top: 5em;
+  }
+  }

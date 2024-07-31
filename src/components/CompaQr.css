@@ -1,0 +1,60 @@
+.compartir-container {
+  border-radius: 10px;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  font-Weight: bold;
+  font-family: Century Gothic, serif;
+}
+
+.compartir-header {
+  background-color: #8e5aef;
+  /* border: 2px solid black; */
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.compartir-header p {
+  margin: 0;
+  color: white;
+  font-size: 30px;
+}
+
+.compartir-icons {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.icon {
+  width: 50px; /* Ajusta el tamaño según sea necesario */
+  height: 50px; /* Ajusta el tamaño según sea necesario */
+  object-fit: contain; /* Asegura que las imágenes mantengan su proporción */
+}
+.iconf{
+  width: 45px;
+  height: 45px;
+}
+
+.popup {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #BC9FF0;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  animation: fadeInOut 2s;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
+}

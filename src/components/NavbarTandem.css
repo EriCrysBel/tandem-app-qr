@@ -1,0 +1,34 @@
+/* NavbarTandem.css */
+
+nav {
+    font-family: Century Gothic, serif;
+}
+
+.navlink {
+    position: relative;
+    color: #d5d5d5;
+    transition: color 0.3s ease;
+}
+
+.navlink:hover {
+    color: white; /* Cambia el color del texto a blanco */
+    font-weight: 700;
+}
+
+.navlink::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: #BC9FF0;
+    top: -10px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.navlink:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
