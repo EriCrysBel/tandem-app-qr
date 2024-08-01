@@ -150,6 +150,7 @@ function ListadosUsers({ url, isGridView }) {
                 <CardTitle>{user.nombre}</CardTitle>
                 <CardDescription>
                   <img src={`https://erika.tandempatrimonionacional.eu/gatsbyqr/images/users/${user.image_url}`} alt={user.nombre} style={{width:'100%'}}/>
+                  <img src={`https://carol.tandempatrimonionacional.eu/gatsbyqr/images/users/${user.image_url}`} alt={user.nombre} style={{width:'100%'}}/>
                   <>
                     <div className='descripcion'>
                       <span className="small text-uppercase text-muted">{user.role}</span>

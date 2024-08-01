@@ -1,10 +1,8 @@
-// custom typefaces
-import "@fontsource-variable/montserrat"
-import "@fontsource/merriweather"
-// normalize CSS across browsers
-import "./src/normalize.css"
-// custom CSS styles
-import "./src/style.css"
+import React from 'react';
+import { ImageProvider } from './src/context/ImageContext';
 
-// Highlighting for code blocks
-import "prismjs/themes/prism.css"
+export const wrapRootElement = ({ element }) => (
+  <ImageProvider>
+    {element}
+  </ImageProvider>
+);

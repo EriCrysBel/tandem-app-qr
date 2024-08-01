@@ -92,7 +92,7 @@ function CrearQr({ userId }) {
 
   const handleSaveClick = async () => {
     try {
-      const response = await fetch('http://localhost/gatsby-qr/v1/create-qr.php', {
+      const response = await fetch('https://erika.tandempatrimonionacional.eu/gatsbyqr/v1/create-qr.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

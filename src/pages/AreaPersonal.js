@@ -33,7 +33,7 @@ const Containerun = styled.div`
       grid-template-columns: 1fr 1fr 1fr 1fr;
       column-gap: 5px;
       width: 100%;
-      min-height: 60vh;
+      min-height: 68vh;
     }
 `
 const Cardadmin = styled.div`
