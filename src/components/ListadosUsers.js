@@ -36,7 +36,8 @@ const CardContainer = styled.div`
 
 const CardTitle = styled.h2`
   margin: 0 0 8px 0;
-  font-size: 1.5em;
+  font-size: 1em;
+  width: 100%;
 `;
 
 const CardDescription = styled.div`
@@ -149,7 +150,7 @@ function ListadosUsers({ url, isGridView }) {
               <CardContainer key={user.id}>
                 <CardTitle>{user.nombre}</CardTitle>
                 <CardDescription>
-                  <img src={`https://erika.tandempatrimonionacional.eu/gatsbyqr/images/users/${user.image_url}`} alt={user.nombre} style={{width:'100%'}}/>
+                  <img src={`https://erika.tandempatrimonionacional.eu/gatsbyqr/images/users/${user.image_url}`} alt={user.nombre} style={{width:'100px'}}/>
                   <>
                     <div className='descripcion'>
                       <span className="small text-uppercase text-muted">{user.role}</span>

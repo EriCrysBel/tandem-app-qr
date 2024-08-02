@@ -31,35 +31,51 @@ function ListadoUsuarios() {
     setDarkMode(prevDarkMode => !prevDarkMode);
   }, []);
   const [isGridView, setIsGridView] = useState(true);
-  const toggleView = () => {
-    setIsGridView(!isGridView);
-  };
+  const [isHovered, setIsHovered] = useState(false);
 
+const handleMouseEnter = () => {
+setIsHovered(true);
+};
+
+const handleMouseLeave = () => {
+setIsHovered(false);
+};
+const hoverStyle = {
+  backgroundColor: isHovered ? '#85ABE5' : '#bad5fc',
+  color: isHovered ? 'white' : 'black',
+  padding:'8px',
+  border: isHovered ? '2px solid #85ABE5':'1px solid black' ,
+  cursor: 'pointer',
+  boxShadow: isHovered ? 'none' : '0px 4px 8px rgba(0, 0, 0, 0.2)',
+  transition: 'background-color 0.3s, color 0.3s'
+};
+
+
+  const toggleView = () => {
+      setIsGridView(!isGridView);
+  };
     return (
         <>
           <Layout>
-            <h1 className='creacionqr mt-3'>Listado de Usuarios</h1>
-            <div style={{
-              display:'grid',
-              gridTemplateColumns:'1fr .15fr',
-              padding:'2em',
-            }}>
-              <RegisterModal buttonText="Registrar nuevo ususario" text='Click Aquí'/>
-                  <Button 
-                  color="info"
-                  onClick={toggleView}
-                  >
-                    {isGridView ? 
+          <div className='titulo mt-3'>
+                <h1>Lista de Usuarios</h1>
+                <Button 
+                    style={hoverStyle}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={toggleView} 
+                >
+                {isGridView ? 
                     <>
                     
-                    <p><FaList /> Ver lista </p>
+                    <p><FaList /> Ver en columna </p>
                     </>
                     :
                     <>
-                    <p><IoGridSharp /> Ver cuadrícula</p>
+                    <p><IoGridSharp /> Ver en filas</p>
                     </>
                     }
-                  </Button>
+                </Button>
             </div>
               
             <div>
