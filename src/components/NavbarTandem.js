@@ -84,7 +84,7 @@ function NavbarTandem({ darkMode, toggleDarkMode }) {
   return (
     <div>
       <Navbar darkMode={darkMode} expand="md">
-        <NavbarBrand href="/" style={{
+        <NavbarBrand href="/AppQr" style={{
           backgroundColor: darkMode ? 'transparent' : 'black',
           borderRadius: '20px',
         }}>
@@ -104,7 +104,7 @@ function NavbarTandem({ darkMode, toggleDarkMode }) {
             <Collapse isOpen={isOpen} navbar>
               <Nav className="me-auto" navbar darkMode={darkMode}>
                 <ReactstrapNavItem>
-                  <NavLink darkMode={darkMode} href="/Login" className='navlink'>APP QR</NavLink>
+                  <NavLink darkMode={darkMode} href="/AppQr" className='navlink'>APP QR</NavLink>
                 </ReactstrapNavItem>
                 <ReactstrapNavItem>
                   <NavLink darkMode={darkMode} href="/AreaPersonal" className='navlink'>

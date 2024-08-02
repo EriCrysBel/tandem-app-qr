@@ -1,64 +1,68 @@
+/* CardQR.css */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, .1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 8px;
-
 }
-.card-grid div{
-margin-left: 0.5em;
+
+.card-grid div {
+  margin-left: 0.5em;
 }
 
 .card-list {
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   font-size: 15px;
   justify-content: center;
-  
 }
 
-.card-list div{
+.card-list div {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   width: 100%;
   column-gap: 15px;
   align-items: center;
   justify-content: center;
-  
-
 }
 
-.card-list .qrid{
-  font-size: 20px;
-  width: 100%;
-
-}
-.card-list .descripcion .qrdes{
+.card-list .qrid {
   font-size: 20px;
   width: 100%;
 }
-.card-list .descripcion .qrnombre{
+
+.card-list .descripcion .qrdes {
+  font-size: 20px;
+  width: 100%;
+  text-align: justify;
+}
+
+.card-list .descripcion .qrnombre {
   font-size: 20px;
   width: 100%;
 }
-.card-list .descripcion .qrdata{
+
+.card-list .descripcion .qrdata {
+  font-size: 20px;
+  width: 50%;
+  word-wrap: break-word; /* Esto asegura que las palabras largas se rompan */
+  word-break: break-all; /* Esto rompe las palabras en cualquier punto si es necesario */
+  white-space: pre-wrap; /* Esto asegura que el texto se envuelva adecuadamente */
+  overflow-wrap: break-word; /* Añadir esta línea también ayuda a romper palabras largas */
+}
+
+.card-list .descripcion .qrcreat {
   font-size: 20px;
   width: 100%;
 }
-.card-list .descripcion .qrcreat{
+
+.card-list .descripcion .qrdate {
   font-size: 20px;
   width: 100%;
 }
-.card-list .descripcion .qrdate{
-  font-size: 20px;
+
+.card-list .socialqr li {
   width: 100%;
 }
-.card-list .socialqr li{
-  width: 100%;
-}
-
-
-
-
 
 .card-list .solution_card {
   width: 100%;
@@ -84,8 +88,7 @@ margin-left: 0.5em;
 .solution_cards_box .solution_card {
   flex: 0 50%;
   background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2),
-              0 5px 15px 0 rgba(37, 44, 97, 0.15);
+  box-shadow: 0 2px 4px 0 rgba(136, 144, 195, 0.2), 0 5px 15px 0 rgba(37, 44, 97, 0.15);
   border-radius: 15px;
   margin: 8px;
   padding: 10px 15px;
@@ -102,11 +105,10 @@ margin-left: 0.5em;
   margin-bottom: 30px; /* Añadir más espacio en la parte inferior cuando la tarjeta está expandida */
 }
 
-.card-list .solution_cards_box .solution_card.expanded{
+.card-list .solution_cards_box .solution_card.expanded {
   min-height: 100px; /* Ajusta según sea necesario */
   min-width: 800px;
   margin-bottom: 30px; /* Añadir más espacio en la parte inferior cuando la tarjeta está expandida */
-
 }
 
 .solution_cards_box .solution_card:hover {
@@ -244,66 +246,64 @@ margin-left: 0.5em;
   }
 }
 
-
-
-
-
-
-
-
-@media (max-width:600px) {
+@media (max-width: 600px) {
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, .1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 8px;
     justify-content: center;
   }
-  
+
   .card-list {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     font-size: 8px;
   }
-  
-  .card-list div{
+
+  .card-list div {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
     width: 100%;
     column-gap: 5px;
     align-items: center;
     justify-content: center;
-    
-  
   }
-  .card-list .qrimage{
+
+  .card-list .qrimage {
     width: 100%;
   }
-  .card-list .qrid{
-    font-size: 10px;
-    width: 100%;
-  
-  }
-  .card-list .descripcion .qrdes{
+
+  .card-list .qrid {
     font-size: 10px;
     width: 100%;
   }
-  .card-list .descripcion .qrnombre{
+
+  .card-list .descripcion .qrdes {
     font-size: 10px;
     width: 100%;
   }
-  .card-list .descripcion .qrdata{
+
+  .card-list .descripcion .qrnombre {
     font-size: 10px;
     width: 100%;
   }
-  .card-list .descripcion .qrcreat{
+
+  .card-list .descripcion .qrdata {
     font-size: 10px;
     width: 100%;
   }
-  .card-list .descripcion .qrdate{
+
+  .card-list .descripcion .qrcreat {
     font-size: 10px;
     width: 100%;
   }
-  .card-list li .socialqr{
+
+  .card-list .descripcion .qrdate {
+    font-size: 10px;
+    width: 100%;
+  }
+
+  .card-list li .socialqr {
     width: 100%;
     font-size: 10px;
   }
