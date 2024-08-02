@@ -4,7 +4,7 @@ import './BannerUser.css';
 
 const BannerUser = ({ darkMode }) => {
   const { userImageUrl } = useContext(ImageContext);
-  const userName = localStorage.getItem('tandem_nombre');
+  const userName = typeof window !== 'undefined' ? localStorage.getItem('tandem_nombre') : '';
 
   const rutaimg = `https://erika.tandempatrimonionacional.eu/gatsbyqr/images/users/${userImageUrl}`;
 
@@ -19,4 +19,4 @@ const BannerUser = ({ darkMode }) => {
   );
 };
 
-export default BannerUser;
+export default BannerUser

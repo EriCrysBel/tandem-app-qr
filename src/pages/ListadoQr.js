@@ -4,7 +4,6 @@ import CardQr from '../components/CardQr';
 import { FaList } from "react-icons/fa";
 import { IoGridSharp } from "react-icons/io5";
 import {Button} from 'reactstrap';
-import CardQr2 from '../components/CardQr2';
 
 const ListadoQr = () => {
     const [isGridView, setIsGridView] = useState(true);

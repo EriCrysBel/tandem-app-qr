@@ -18,7 +18,7 @@ function CambiarContra(props) {
   const handleEmailChange = (event) => setEmail(event.target.value);
 
   const handleSubmit = async () => {
-    const response = await fetch('https://carol.tandempatrimonionacional.eu/gatsbyqr/v1/change-password.php', {
+    const response = await fetch('https://erika.tandempatrimonionacional.eu/gatsbyqr/v1/change-password.php', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

@@ -4,20 +4,27 @@ import React, { createContext, useState, useEffect } from 'react';
 export const ImageContext = createContext();
 
 export const ImageProvider = ({ children }) => {
-  const [userImageUrl, setUserImageUrl] = useState(localStorage.getItem('tandem_image_url'));
+  const [userImageUrl, setUserImageUrl] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('tandem_image_url');
+    }
+    return null;
+  });
 
   useEffect(() => {
-    const handleStorageChange = () => {
-      setUserImageUrl(localStorage.getItem('tandem_image_url'));
-    };
+    if (typeof window !== 'undefined') {
+      const handleStorageChange = () => {
+        setUserImageUrl(localStorage.getItem('tandem_image_url'));
+      };
 
-    // Agregar evento para escuchar cambios en localStorage
-    window.addEventListener('storage', handleStorageChange);
+      // Agregar evento para escuchar cambios en localStorage
+      window.addEventListener('storage', handleStorageChange);
 
-    // Limpiar el evento cuando el componente se desmonta
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    };
+      // Limpiar el evento cuando el componente se desmonta
+      return () => {
+        window.removeEventListener('storage', handleStorageChange);
+      };
+    }
   }, []);
 
   return (

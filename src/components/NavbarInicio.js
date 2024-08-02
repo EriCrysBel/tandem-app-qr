@@ -16,9 +16,8 @@ import styled from 'styled-components';
 import ModalSoporte from './ModalSoporte'; // Asegúrate de tener la importación correcta
 import './NavbarInicio.css';
 
-
-const Navbar = styled(ReactstrapNavbar)
-`
+// Estilos personalizados usando styled-components
+const Navbar = styled(ReactstrapNavbar)`
   font-family: Century Gothic, serif;
   background-color: ${props => props.darkMode ? '#000' : '#f8f9fa'} !important;
 `;
@@ -63,7 +62,6 @@ const Nav = styled(ReactstrapNav)`
   }
 `;
 
-
 function NavbarInicio(args) {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -98,17 +96,21 @@ function NavbarInicio(args) {
   return (
     <div>
       <Navbar darkMode={darkMode} expand="md">
-        <NavbarBrand href="/"  style={{
-          backgroundColor: darkMode ?'transparent':'black',
-          borderRadius: '20px', 
-
+        <NavbarBrand href="/" style={{
+          backgroundColor: darkMode ? 'transparent' : 'black',
+          borderRadius: '20px',
         }}>
-          <StaticImage src='../images/logoblanco.svg' alt="Logo" width={150} style={{
-          color:'black',
-          height:'50px',
-          boxShadow: darkMode ? 'none' : '0px 4px 8px rgba(3,3,3)',
-          borderRadius: '20px'
-          }}/>
+          <StaticImage 
+            src='../images/logoblanco.svg' 
+            alt="Logo" 
+            width={150} 
+            style={{
+              color: 'black',
+              height: '50px',
+              boxShadow: darkMode ? 'none' : '0px 4px 8px rgba(3,3,3)',
+              borderRadius: '20px'
+            }}
+          />
         </NavbarBrand>
         {isMobile ? (
           <>
@@ -119,18 +121,14 @@ function NavbarInicio(args) {
                   <NavLink darkMode={darkMode} href="/InfoInstitucional" className='navlink'>Información Institucional</NavLink>
                 </ReactstrapNavItem>
                 <ReactstrapNavItem>
-                  <NavLink darkMode={darkMode} href="/Login" className='navlink'>
-                    APP QR
-                  </NavLink>
+                  <NavLink darkMode={darkMode} href="/Login" className='navlink'>APP QR</NavLink>
                 </ReactstrapNavItem>
                 <ReactstrapNavItem>
-                  <NavLink darkMode={darkMode} href="#" onClick={toggleModal}>
-                    SOPORTE TÉCNICO
-                  </NavLink>
+                  <NavLink darkMode={darkMode} href="#" onClick={toggleModal}>SOPORTE TÉCNICO</NavLink>
                 </ReactstrapNavItem>
               </Nav>
               <Button color="secondary" onClick={toggleDarkMode}>
-              {darkMode ? <CiLight size={24} /> : <MdDarkMode size={24} />}
+                {darkMode ? <CiLight size={24} /> : <MdDarkMode size={24} />}
               </Button>
             </Collapse>
           </>
@@ -140,22 +138,14 @@ function NavbarInicio(args) {
               <NavLink darkMode={darkMode} href="/InfoInstitucional" className='navlink'>Información Institucional</NavLink>
             </ReactstrapNavItem>
             <ReactstrapNavItem>
-              <NavLink darkMode={darkMode} href="/Login" className='navlink'>
-                APP QR
-              </NavLink>
+              <NavLink darkMode={darkMode} href="/Login" className='navlink'>APP QR</NavLink>
             </ReactstrapNavItem>
             <ReactstrapNavItem>
-              <NavLink darkMode={darkMode} href="#" onClick={toggleModal}>
-                SOPORTE TÉCNICO
-              </NavLink>
+              <NavLink darkMode={darkMode} href="#" onClick={toggleModal}>SOPORTE TÉCNICO</NavLink>
             </ReactstrapNavItem>
             <ReactstrapNavItem>
               <Button color="secondary" onClick={toggleDarkMode}>
-              {darkMode ? 
-              <CiLight size={24} /> 
-              : 
-              <MdDarkMode size={24} />
-              }
+                {darkMode ? <CiLight size={24} /> : <MdDarkMode size={24} />}
               </Button>
             </ReactstrapNavItem>
           </Nav>

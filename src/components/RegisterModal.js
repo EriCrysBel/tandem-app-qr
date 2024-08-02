@@ -5,18 +5,18 @@ import { FaUserPlus } from "react-icons/fa";
 
 function RegisterModal({ className, buttonText }) {
   const [modal, setModal] = useState(false);
-  const toggle = () => {
-    setModal(!modal);
-    setError('');
-    setSuccess('');
-  };
-
   const [nombre, setNombre] = useState('');
   const [delegacion, setDelegacion] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
+
+  const toggle = () => {
+    setModal(!modal);
+    setError('');
+    setSuccess('');
+  };
 
   const handleRegister = async () => {
     if (!nombre || !email || !delegacion || !password) {
@@ -26,16 +26,16 @@ function RegisterModal({ className, buttonText }) {
 
     console.log(nombre, delegacion, email, password);
     try {
-      const response = await fetch('http://localhost/gatsby-qr/v1/register-user.php', {
+      const response = await fetch('https://erika.tandempatrimonionacional.eu/gatsbyqr/v1/register-user.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          nombre: nombre,
-          delegacion: delegacion,
-          email: email,
-          password: password
+          nombre,
+          delegacion,
+          email,
+          password
         })
       });
       if (!response.ok) {
@@ -89,7 +89,6 @@ function RegisterModal({ className, buttonText }) {
                 Escribe tu nombre y apellidos
               </Label>
             </FormGroup>
-            {' '}
             <FormGroup floating>
               <Input
                 id="emailregister"
@@ -103,7 +102,6 @@ function RegisterModal({ className, buttonText }) {
                 Escribe tu correo electrónico
               </Label>
             </FormGroup>
-            {' '}
             <FormGroup floating>
               <Input
                 id="passwordregister"
@@ -117,7 +115,6 @@ function RegisterModal({ className, buttonText }) {
                 Escribe tu contraseña
               </Label>
             </FormGroup>
-            {' '}
             <FormGroup>
               <Label for="delegacionregister">
                 Selecciona tu delegación
@@ -137,7 +134,6 @@ function RegisterModal({ className, buttonText }) {
                 <option value="Moncloa">Moncloa</option>
               </Input>
             </FormGroup>
-            {' '}
             <Button color="primary" onClick={handleRegister}>
               Registrar
             </Button>

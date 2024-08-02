@@ -1,11 +1,18 @@
+// AppQr.js
 import React, { useState, useEffect } from "react";
 import Layout from "../components/layout";
 import CardApp from "../components/CardApp"; 
 import Informacion from "../components/Informacion";
 
-const AppQr = ({ darkMode }) => {
-  const role = localStorage.getItem('tandem_role'); 
+const AppQr = () => {
+  const [role, setRole] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setRole(localStorage.getItem('tandem_role'));
+    }
+  }, []);
 
   const toggleModal = () => setModalOpen(!modalOpen);
 
@@ -13,15 +20,17 @@ const AppQr = ({ darkMode }) => {
     <>
       <Layout>
         {role === 'admin' || role === 'employee' ? 
-          <CardApp darkMode={darkMode} style={{backgroundColor:'transparent'}}/>
-        : 
+          <>
+            <CardApp />
+          </>
+          : 
           <div style={{minHeight:'68vh'}}>
             <Informacion />
           </div>
         }
       </Layout>
     </>
-  );
+  )
 }
 
-export default AppQr;
+export default AppQr
