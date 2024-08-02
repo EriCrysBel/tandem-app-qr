@@ -5,18 +5,18 @@ import { FaUserPlus } from "react-icons/fa";
 
 function RegisterModal({ className, buttonText }) {
   const [modal, setModal] = useState(false);
+  const toggle = () => {
+    setModal(!modal);
+    setError('');
+    setSuccess('');
+  };
+
   const [nombre, setNombre] = useState('');
   const [delegacion, setDelegacion] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
-
-  const toggle = () => {
-    setModal(!modal);
-    setError('');
-    setSuccess('');
-  };
 
   const handleRegister = async () => {
     if (!nombre || !email || !delegacion || !password) {
@@ -32,10 +32,10 @@ function RegisterModal({ className, buttonText }) {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          nombre,
-          delegacion,
-          email,
-          password
+          nombre: nombre,
+          delegacion: delegacion,
+          email: email,
+          password: password
         })
       });
       if (!response.ok) {
@@ -69,7 +69,7 @@ function RegisterModal({ className, buttonText }) {
         <p><FaUserPlus size={30}/> {buttonText}</p>
       </Button>
       <Modal isOpen={modal} toggle={toggle} className={className}>
-        <ModalHeader toggle={toggle} close={closeBtn} className='justify-content-end'>
+        <ModalHeader toggle={toggle} className='justify-content-end'>
           <h3 className='m-1'>Registro de nuevos usuarios</h3>
         </ModalHeader>
         <ModalBody>
@@ -89,6 +89,7 @@ function RegisterModal({ className, buttonText }) {
                 Escribe tu nombre y apellidos
               </Label>
             </FormGroup>
+            {' '}
             <FormGroup floating>
               <Input
                 id="emailregister"
@@ -102,6 +103,7 @@ function RegisterModal({ className, buttonText }) {
                 Escribe tu correo electrónico
               </Label>
             </FormGroup>
+            {' '}
             <FormGroup floating>
               <Input
                 id="passwordregister"
@@ -115,6 +117,7 @@ function RegisterModal({ className, buttonText }) {
                 Escribe tu contraseña
               </Label>
             </FormGroup>
+            {' '}
             <FormGroup>
               <Label for="delegacionregister">
                 Selecciona tu delegación
@@ -134,6 +137,7 @@ function RegisterModal({ className, buttonText }) {
                 <option value="Moncloa">Moncloa</option>
               </Input>
             </FormGroup>
+            {' '}
             <Button color="primary" onClick={handleRegister}>
               Registrar
             </Button>
@@ -154,4 +158,4 @@ RegisterModal.propTypes = {
   buttonText: PropTypes.string.isRequired,
 };
 
-export default RegisterModal;
+export default RegisterModal
