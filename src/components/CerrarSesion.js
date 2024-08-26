@@ -8,6 +8,8 @@ const CerrarSesion = ({ darkMode }) => {
       localStorage.removeItem('tandem_id');
       localStorage.removeItem('tandem_nombre');
       localStorage.removeItem('tandem_email');
+      localStorage.removeItem('tandem_role');
+      localStorage.removeItem('tandem_image_url');
       // localStorage.removeItem('tandem_token');
     }
   };

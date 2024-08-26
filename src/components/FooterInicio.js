@@ -62,10 +62,10 @@ const FooterInicio = () => {
         </div>
         </div>
         <div style={{ gridArea: "s4" }}>
-          <a href="./Politica" style={linkStyles}>Política de Privacidad</a>
-          <a href="./Cookies" style={linkStyles}>Cookies</a>
-          <a href="./Accesibilidad" style={linkStyles}>Accesibilidad</a>
-          <a href="./AvisoLegal" style={linkStyles}>Aviso legal</a>
+          <a href="../Politica" style={linkStyles}>Política de Privacidad</a>
+          <a href="../Cookies" style={linkStyles}>Cookies</a>
+          <a href="../Accesibilidad" style={linkStyles}>Accesibilidad</a>
+          <a href="../AvisoLegal" style={linkStyles}>Aviso legal</a>
         </div>
         <div style={{ gridArea: "s5" }}>
           <div style={{ display: "inline-block" }}>

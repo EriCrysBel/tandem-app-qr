@@ -9,6 +9,14 @@
   margin-left: 0.5em;
 }
 
+.card-grid .descripcion{
+  font-size: 20px;
+  width: 50%;
+  word-wrap: break-word; /* Esto asegura que las palabras largas se rompan */
+  word-break: break-all; /* Esto rompe las palabras en cualquier punto si es necesario */
+  white-space: pre-wrap; /* Esto asegura que el texto se envuelva adecuadamente */
+  overflow-wrap: break-word; /* Añadir esta línea también ayuda a romper palabras largas */
+}
 .card-list {
   display: flex;
   flex-direction: column;
