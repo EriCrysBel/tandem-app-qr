@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Helmet } from "react-helmet";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./CardQR.css";
+import "./CardQr.css";
 import CodigoQrNuevo from '../components/CodigoQrNuevo';
 
 import ModalTandem from "./ModalTandem";
