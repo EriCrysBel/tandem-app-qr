@@ -18,17 +18,19 @@ const AppQr = () => {
 
   return (
     <>
-      <Layout>
-        {role === 'admin' || role === 'employee' ? 
-          <>
-            <CardApp />
-          </>
-          : 
-          <div style={{minHeight:'68vh'}}>
+      {role === 'admin' || role === 'employee' ? 
+        <Layout>
+          <CardApp />
+        </Layout>
+
+          :
+          
+        <Layout> 
+          <div style={{minHeight:'78vh'}}>
             <Informacion />
           </div>
-        }
-      </Layout>
+        </Layout>
+}
     </>
   )
 }

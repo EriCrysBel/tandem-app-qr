@@ -13,7 +13,7 @@ import {
   Button,
 } from 'reactstrap';
 import styled from 'styled-components';
-import ModalSoporte from './ModalSoporte'; // Asegúrate de tener la importación correcta
+import ModalSoporte from './ModalSoporte'; 
 import './NavbarInicio.css';
 
 // Estilos personalizados usando styled-components
