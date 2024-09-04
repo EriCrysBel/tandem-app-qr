@@ -87,10 +87,10 @@ const ListadoQr = () => {
 
         try {
             if (role === 'admin') {
-                const response = await axios.get('http://carol.tandempatrimonionacional.eu/gatsbyqr/v1/list-qr.php');
+                const response = await axios.get('http://erika.tandempatrimonionacional.eu/gatsbyqr/v1/list-qr.php');
                 setQrCodes(response.data.qr_codes);
             } else if (role === 'employee' && userId) {
-                const response = await axios.post('http://carol.tandempatrimonionacional.eu/gatsbyqr/v1/list-qr-user.php', { id: userId });
+                const response = await axios.post('http://erika.tandempatrimonionacional.eu/gatsbyqr/v1/list-qr-user.php', { id: userId });
                 setQrCodes(response.data.qr_codes);
             } else {
                 setError('No se encontró el ID de usuario o rol en localStorage.');
