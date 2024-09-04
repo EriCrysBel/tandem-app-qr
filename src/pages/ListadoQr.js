@@ -86,7 +86,7 @@ const ListadoQr = () => {
         const role = localStorage.getItem('tandem_role');
 
         try {
-            if (role === 'admin') {
+            if (typeof window !== 'undefined' && role === 'admin') {
                 const response = await axios.get('http://erika.tandempatrimonionacional.eu/gatsbyqr/v1/list-qr.php');
                 setQrCodes(response.data.qr_codes);
             } else if (role === 'employee' && userId) {
