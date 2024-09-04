@@ -86,7 +86,14 @@ const ListadoQr = () => {
         const role = localStorage.getItem('tandem_role');
 
         try {
-            if (typeof window !== 'undefined' && role === 'admin') {
+            if (typeof window !== 'undefined') {
+                localStorage.setItem('tandem_id', respuesta.user.id);
+                localStorage.setItem('tandem_email', respuesta.user.email);
+                localStorage.setItem('tandem_image_url', respuesta.user.image_url);
+                localStorage.setItem('tandem_nombre', respuesta.user.nombre);
+                localStorage.setItem('tandem_role', respuesta.user.role);
+              }
+            else if (role === 'admin') {
                 const response = await axios.get('http://erika.tandempatrimonionacional.eu/gatsbyqr/v1/list-qr.php');
                 setQrCodes(response.data.qr_codes);
             } else if (role === 'employee' && userId) {
