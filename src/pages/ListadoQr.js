@@ -6,9 +6,6 @@ import { FaList } from "react-icons/fa";
 import { IoGridSharp } from "react-icons/io5";
 import styled from 'styled-components';
 import debounce from 'lodash.debounce';
-import CodigoQrNuevo from '../components/CodigoQrNuevo';
-import ModalTandem from '../components/ModalTandem';
-import EliminarQR from '../components/EliminarQR';
 
 const ListadoContainer = styled.div`
   min-height: 70vh;
@@ -18,17 +15,12 @@ const ListadoContainer = styled.div`
 const TitleContainer = styled.div`
   margin-top: 3em;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
 `;
 
 const Title = styled.h1`
   font-size: 2.5rem;
-  text-align: center;
-  font-family: Georgia, serif;
-  color: #8F6F24;
 `;
 
 const ToggleButton = styled.button`
@@ -49,11 +41,11 @@ const QRList = styled.ul`
   padding: 0;
 `;
 
-const CardContainer = styled.div`
+const QRItem = styled.li`
   border: 1px solid #ccc;
   border-radius: 12px;
   padding: 12px;
-  width: 300px;
+  margin-bottom: 1em;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease-in-out;
   &:hover {
@@ -61,16 +53,7 @@ const CardContainer = styled.div`
     background-color: #0a57ca7f;
     color: white;
   }
-  &.destacado {
-    background-color: orange;
-  }
 `;
-const CardDescription = styled.div`
-  margin: 0 0 10px 0;
-  font-size: 1em;
-  color: #000;
-`;
-
 
 const QRInfo = styled.p`
   margin: 0 0 8px 0;
@@ -104,10 +87,10 @@ const ListadoQr = () => {
 
         try {
             if (role === 'admin') {
-                const response = await axios.get('http://erika.tandempatrimonionacional.eu/gatsbyqr/v1/list-qr.php');
+                const response = await axios.get('http://carol.tandempatrimonionacional.eu/gatsbyqr/v1/list-qr.php');
                 setQrCodes(response.data.qr_codes);
             } else if (role === 'employee' && userId) {
-                const response = await axios.post('http://erika.tandempatrimonionacional.eu/gatsbyqr/v1/list-qr-user.php', { id: userId });
+                const response = await axios.post('http://carol.tandempatrimonionacional.eu/gatsbyqr/v1/list-qr-user.php', { id: userId });
                 setQrCodes(response.data.qr_codes);
             } else {
                 setError('No se encontró el ID de usuario o rol en localStorage.');
@@ -123,23 +106,19 @@ const ListadoQr = () => {
         fetchQrCodes();
     }, []);
 
-    function search(items) {
-        return items.filter((item) => {
-          return searchParam.some((param) => {
-            return (
-              item[param] && // Verifica que el campo existe
-              item[param].toString().toLowerCase().includes(q.toLowerCase())
-            );
-          });
-        });
-      }
-    
-      const handleSearchChange = useCallback(
-        debounce((e) => {
-          setQ(e.target.value);
+    const search = useCallback(
+        debounce((items) => {
+            return items.filter((item) => {
+                return searchParam.some((param) => {
+                    return (
+                        item[param] &&
+                        item[param].toString().toLowerCase().includes(q.toLowerCase())
+                    );
+                });
+            });
         }, 300),
-        []
-      );
+        [q, searchParam]
+    );
 
     if (loading) {
         return <p>Cargando...</p>;
@@ -151,7 +130,6 @@ const ListadoQr = () => {
 
     return (
         <Layout>
-            
             <TitleContainer>
                 <Title>Lista de Códigos QR</Title>
                 <ToggleButton 
@@ -163,58 +141,19 @@ const ListadoQr = () => {
                     {isGridView ? <><FaList /> Ver en columna</> : <><IoGridSharp /> Ver en filas</>}
                 </ToggleButton>
             </TitleContainer>
-            <div className="wrapper">
-            <div className="search-wrapper">
-            <label htmlFor="search-form" style={{ marginBottom: '1em' }}>
-              <input
-                type="search"
-                name="search-form"
-                id="search-form"
-                className="search-input"
-                placeholder="Buscar por nombre, id o datos..."
-                onChange={handleSearchChange}
-                style={{ width: '400px', height: '40px', fontSize: '16px', padding: '10px' }}
-              />
-            </label>
-          </div>
 
-            <div className={isGridView ? "card-grid" : "card-list"}>
-            {(qrCodes || []).map(qrCode => (    
             <ListadoContainer>
                 <QRList>
-                
-                    <CardContainer key={qrCode.qr_id}>
-                        <CardDescription>
-                            <CodigoQrNuevo datos={qrCode.data} className="qrimage"/>
-                            <div className="descripcion">
-                                                                                        <p className="qrid"><strong>Id QR:</strong> {qrCode.id}</p>
-                            <p className="qrnombre">
-                      <strong>Nombre:</strong> {qrCode.nombre_ref}
-                            </p>
-                            <p className="qrdes">
-                      <strong>Descripción:</strong> {qrCode.description}
-                    </p>
-                    <p className="qrdata">
-                      <strong>Datos del QR: </strong> {qrCode.data}
-                    </p>
-                    <p className="qrcreat">
-                      <strong>Creado por ID: </strong> {qrCode.created_by}
-                    </p>
-                    <p className="qrdate">
-                      <strong>Fecha y hora de creación: </strong> {qrCode.created_at}
-                    </p>
-
-            </div>
-                    </CardDescription>
-                    </CardContainer>
-
-                    
+                {(qrCodes || []).map(qrCode => (
+                        <QRItem key={qrCode.qr_id}>
+                            <QRInfo><strong>Nombre de Referencia:</strong> {qrCode.qr_nombre_ref}</QRInfo>
+                            <QRInfo><strong>Descripción:</strong> {qrCode.qr_description}</QRInfo>
+                            <QRInfo><strong>Fecha de Creación:</strong> {new Date(qrCode.qr_created_at).toLocaleDateString()}</QRInfo>
+                            <QRInfo><strong>Datos del QR:</strong> {qrCode.qr_data}</QRInfo>
+                        </QRItem>
+                    ))}
                 </QRList>
-        
             </ListadoContainer>
-            ))}                
-            </div>
-            </div>
         </Layout>
     );
 };
