@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { StaticImage } from 'gatsby-plugin-image'
 import styled from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ChangeRoleUser from './ChangeRoleUser';
 import UpdateUser from './UpdateUser';
 import DeleteUser from './DeleteUser';
-import CardEstilo from './CardEstilo'; // Importamos el componente base
+
 import "./ListadosUsers.css";
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
@@ -25,13 +24,6 @@ const CardContainer = styled.div`
   &.destacado {
     background-color: orange;
   }
-
-  /* @media (min-width: 768px) {
-    margin: 5em;
-  }
-  @media (max-width: 500px) {
-    margin: 10em;
-  } */
 `;
 
 const CardTitle = styled.h2`
@@ -60,10 +52,6 @@ const Button = styled.button`
   &.descargar {
     background-color: red;
   }
-`;
-
-const CardImg = styled.img`
-  max-width: 100px;
 `;
 
 function ListadosUsers({ url, isGridView }) {
@@ -186,47 +174,6 @@ function ListadosUsers({ url, isGridView }) {
                   </>
                 </CardDescription>
               </CardContainer>
-              
-              {/* <CardEstilo
-                key={user.id}
-                url={`https://erika.tandempatrimonionacional.eu/gatsbyqr/${user.image_url}`}
-                titulo={user.nombre}
-                descripcion={
-                  <>
-                    <div className='descripcion'>
-                      <span className="small text-uppercase text-muted">{user.role}</span>
-                      <p className='id'><strong>Id usuario:</strong> {user.id}</p>
-                      <p className='email'><strong>Email:</strong> {user.email}</p>
-                      <p className='dele'><strong>Delegación:</strong> {user.delegacion}</p>
-                      
-                      <div className="social">
-                        <li className="list-inline-item" style={{ cursor: 'pointer' }}>
-                          <UpdateUser
-                            className="social-link"
-                            initialEmail={user.email}
-                            initialNombre={user.nombre}
-                            initialDepartamento={user.departamento}
-                            onUserUpdated={handleUserUpdated}
-                          />
-                        </li>
-                        <li className="list-inline-item" style={{ cursor: 'pointer' }}>
-                          <ChangeRoleUser
-                            className="social-link"
-                            initialEmail={user.email}
-                            onRoleChanged={handleUserUpdated}
-                          />
-                        </li>
-                        <li className="list-inline-item" style={{ cursor: 'pointer' }}>
-                          <DeleteUser 
-                            className="social-link"
-                            onDeleteUser={handleUserUpdated}
-                          />
-                        </li>
-                      </div>
-                    </div>
-                  </>
-                }
-              /> */}
               </>
             ))}
           </div>

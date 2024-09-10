@@ -6,7 +6,9 @@ import NavbarTandem from "./NavbarTandem"
 
 const Layout = ({ children }) => {
   const [darkMode, setDarkMode] = useState(false);
-
+  const stylemain={
+  minHeight:'80vh',
+  }
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
     if (!darkMode) {
@@ -21,7 +23,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <NavbarTandem darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <main>
+      <main style={stylemain}>
       {children}
       </main>
       <Footer darkMode={darkMode} toggleDarkMode={toggleDarkMode}/>

@@ -1,5 +1,5 @@
-// CardQr.js
 import React, { useState, useEffect, useCallback } from "react";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./CardQr.css";
 import CodigoQrNuevo from '../components/CodigoQrNuevo';
@@ -34,8 +34,7 @@ const CardDescription = styled.div`
   color: #000;
 `;
 
-
-const CardQr = ({ url, isGridView, onUserUpdated }) => {
+const CardQrUser = ({ userId, isGridView, onUserUpdated }) => {
   const [qrCodes, setQrCodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -43,20 +42,23 @@ const CardQr = ({ url, isGridView, onUserUpdated }) => {
   const [refresh, setRefresh] = useState(false); // Estado para rastrear actualizaciones
   const [message, setMessage] = useState('');
   const [q, setQ] = useState("");
-  const [searchParam] = useState(["nombre_ref", "data", "created_by", "id"]);
+  const [searchParam] = useState(["qr_nombre_ref", "qr_data", "user_nombre", "qr_id"]);
 
   useEffect(() => {
     const fetchQrCodes = async () => {
       try {
-        const response = await fetch(url, {
-          method: 'GET',
+        const response = await fetch("https://erika.tandempatrimonionacional.eu/gatsbyqr/v1/list-qr-user.php", {
+          method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
+          body: JSON.stringify({ id: userId }),
         });
+
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
+
         const data = await response.json();
         setQrCodes(data.qr_codes);
         setIsLoaded(true);
@@ -69,7 +71,7 @@ const CardQr = ({ url, isGridView, onUserUpdated }) => {
     };
 
     fetchQrCodes();
-  }, [url, refresh]);
+  }, [userId, refresh]);
 
   const handleUserUpdated = () => {
     setRefresh(!refresh); // Cambia el estado de refresh para desencadenar useEffect
@@ -124,34 +126,34 @@ const CardQr = ({ url, isGridView, onUserUpdated }) => {
 
           <div className={isGridView ? "card-grid" : "card-list"}>
             {search(qrCodes).map((qrCode) => (
-              <CardContainer key={qrCode.id}>
+              <CardContainer key={qrCode.qr_id}>
                 <CardDescription>
                   <div className="descripcion">
-                    <CodigoQrNuevo datos={qrCode.data} className="qrimage" />
+                    <CodigoQrNuevo datos={qrCode.qr_data} className="qrimage" />
                     <p className="qrid">
-                      <strong>Id QR:</strong> {qrCode.id}
+                      <strong>Id QR:</strong> {qrCode.qr_id}
                     </p>
                     <p className="qrnombre">
-                      <strong>Nombre:</strong> {qrCode.nombre_ref}
+                      <strong>Nombre:</strong> {qrCode.qr_nombre_ref}
                     </p>
                     <p className="qrdes">
-                      <strong>Descripción:</strong> {qrCode.description}
+                      <strong>Descripción:</strong> {qrCode.qr_description}
                     </p>
                     <p className="qrdata">
-                      <strong>Datos del QR: </strong> {qrCode.data}
+                      <strong>Datos del QR: </strong> {qrCode.qr_data}
                     </p>
                     <p className="qrcreat">
-                      <strong>Creado por: </strong> {qrCode.created_by}
+                      <strong>Creado por: </strong> {qrCode.user_nombre}
                     </p>
                     <p className="qrdate">
-                      <strong>Fecha y hora de creación: </strong> {qrCode.created_at}
+                      <strong>Fecha y hora de creación: </strong> {qrCode.qr_created_at}
                     </p>
                     <div>
                       <li className="list-inline-item" style={{ cursor: 'pointer' }}>
                         <ModalTandem
                           className="socialqr"
                           boton="Borrar"
-                          text={<EliminarQR qr={qrCode.nombre_ref} onUserUpdated={handleUserUpdated} />}
+                          text={<EliminarQR qr={qrCode.qr_nombre_ref} onUserUpdated={handleUserUpdated} />}
                         />
                       </li>
                     </div>
@@ -166,10 +168,10 @@ const CardQr = ({ url, isGridView, onUserUpdated }) => {
   }
 };
 
-CardQr.propTypes = {
-  url: PropTypes.string.isRequired,
+CardQrUser.propTypes = {
+  userId: PropTypes.number.isRequired,
   isGridView: PropTypes.bool,
   onUserUpdated: PropTypes.func.isRequired,
 };
 
-export default CardQr;
+export default CardQrUser;
