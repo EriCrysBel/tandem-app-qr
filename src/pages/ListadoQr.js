@@ -7,7 +7,7 @@ import { FaList } from "react-icons/fa";
 import { IoGridSharp } from "react-icons/io5";
 import { Button } from 'reactstrap';
 
-const ListadoQr = () => {
+const ListadoQr = ({ darkMode }) => {
     const [isGridView, setIsGridView] = useState(true);
     const [isHovered, setIsHovered] = useState(false);
     const [role, setRole] = useState(null);
@@ -66,10 +66,10 @@ const ListadoQr = () => {
                 </div>
             )}
 
-            <div style={{ minHeight: '70vh', margin: '2em' }}>
+            <div style={{ minHeight: '70vh', margin: '2em'}}>
             {role === 'admin' ? (
-                <CardQr url="https://erika.tandempatrimonionacional.eu/gatsbyqr/v1/list-qr.php" isGridView={isGridView} />
-            ) : (role === 'employee' && userId) ? (
+                <CardQr url="https://erika.tandempatrimonionacional.eu/gatsbyqr/v1/list-qr.php" darkMode={false} isGridView={isGridView} />
+                ) : (role === 'employee' && userId) ? (
                     <div>
                         {/* Vista para empleados con códigos QR asociados a su usuario */}
                         <CardQrUser userId={parseInt(userId)} isGridView={isGridView} onUserUpdated={() => { /* Opcional: realizar alguna acción después de actualizar los QR */ }} />

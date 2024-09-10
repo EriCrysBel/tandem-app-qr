@@ -11,31 +11,34 @@ import debounce from 'lodash.debounce'; // para la función debounce
 import styled from "styled-components";
 
 const CardContainer = styled.div`
-  border: 1px solid #ccc;
+  border: 1px solid ${props => props.darkMode ? '#444' : '#ccc'};
   border-radius: 12px;
   padding: 12px;
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease-in-out;
+  background-color: ${props => props.darkMode ? '#333' : 'white'};
+  color: ${props => props.darkMode ? 'white' : 'black'};
+
   &:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #0a57ca7f;
+    background-color: ${props => props.darkMode ? '#444' : '#0a57ca7f'};
     color: white;
   }
+
   &.destacado {
     background-color: orange;
   }
 `;
 
-
 const CardDescription = styled.div`
   margin: 0 0 10px 0;
   font-size: 1em;
-  color: #000;
+  color: ${props => props.darkMode ? 'white' : '#000'};
 `;
 
 
-const CardQr = ({ url, isGridView, onUserUpdated }) => {
+const CardQr = ({ url, isGridView, onUserUpdated,darkMode }) => {
   const [qrCodes, setQrCodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -124,8 +127,8 @@ const CardQr = ({ url, isGridView, onUserUpdated }) => {
 
           <div className={isGridView ? "card-grid" : "card-list"}>
             {search(qrCodes).map((qrCode) => (
-              <CardContainer key={qrCode.id}>
-                <CardDescription>
+              <CardContainer key={qrCode.id} darkMode={darkMode}>
+                <CardDescription darkMode={darkMode}>
                   <div className="descripcion">
                     <CodigoQrNuevo datos={qrCode.data} className="qrimage" />
                     <p className="qrid">
