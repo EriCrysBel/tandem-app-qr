@@ -72,7 +72,7 @@ const ListadoQr = ({ darkMode }) => {
                 ) : (role === 'employee' && userId) ? (
                     <div>
                         {/* Vista para empleados con códigos QR asociados a su usuario */}
-                        <CardQrUser userId={parseInt(userId)} isGridView={isGridView} onUserUpdated={() => { /* Opcional: realizar alguna acción después de actualizar los QR */ }} />
+                        <CardQrUser userId={parseInt(userId)} isGridView={isGridView} onUserUpdated={() => { /* Opcional: realizar alguna acción después de actualizar los QR */ }} darkMode={false} />
                     </div>
                 ) : (
                     <div className='titulo mt-3'>

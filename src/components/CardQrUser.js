@@ -17,9 +17,12 @@ const CardContainer = styled.div`
   width: 300px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
+  color: ${props => props.darkMode ? 'white' : 'black'};
+  background-color: ${props => props.darkMode ? '#333' : 'white'};
   &:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #0a57ca7f;
+    background-color: ${props => props.darkMode ? '#444' : '#0a57ca7f'};
     color: white;
   }
   &.destacado {
@@ -31,10 +34,10 @@ const CardContainer = styled.div`
 const CardDescription = styled.div`
   margin: 0 0 10px 0;
   font-size: 1em;
-  color: #000;
+  color: ${props => props.darkMode ? 'white' : '#000'};
 `;
 
-const CardQrUser = ({ userId, isGridView, onUserUpdated }) => {
+const CardQrUser = ({ userId, isGridView, onUserUpdated, darkMode }) => {
   const [qrCodes, setQrCodes] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);

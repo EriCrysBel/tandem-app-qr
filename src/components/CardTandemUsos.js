@@ -1,7 +1,6 @@
 import React from "react"
 import  { Card, CardBody, CardTitle, CardSubtitle} from "reactstrap"
-import { StaticImage } from "gatsby-plugin-image"
-import ButtonModalTandem from "./ButtonModalTandem"
+
 import "./CardUsos.css"
 
 import CarruselButtonTandem from "./CarruselButtonTandem"

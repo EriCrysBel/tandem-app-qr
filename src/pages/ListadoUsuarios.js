@@ -24,18 +24,15 @@ const lightTheme = {
   color: '#000',
 };
 
-function ListadoUsuarios() {
-  const [darkMode, setDarkMode] = useState(false);
+function ListadoUsuarios({ darkMode }) {
   const [role, setRole] = useState(null);
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       setRole(localStorage.getItem('tandem_role'));
+      setUserId(localStorage.getItem('tandem_id')); // Obtener el ID del usuario
     }
-  }, []);
-
-  const toggleDarkMode = useCallback(() => {
-    setDarkMode(prevDarkMode => !prevDarkMode);
   }, []);
 
   const [isGridView, setIsGridView] = useState(true);
@@ -83,7 +80,7 @@ function ListadoUsuarios() {
             </Button>
           </div>
           <div>
-            <ListadosUsers url='https://erika.tandempatrimonionacional.eu/gatsbyqr/v1/list-users.php' isGridView={isGridView} darkMode={darkMode} />
+            <ListadosUsers url='https://erika.tandempatrimonionacional.eu/gatsbyqr/v1/list-users.php' isGridView={isGridView} darkMode={false} />
           </div>
         </Layout>
       ) : (

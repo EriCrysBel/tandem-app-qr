@@ -10,8 +10,7 @@ import { Button } from "reactstrap";
 import { LuSave } from "react-icons/lu";
 import { FaRedoAlt } from "react-icons/fa";
 import InstModal from "../components/InstModal";
-import CodigoQrNuevo from "../components/CodigoQrNuevo";
-
+import { PiFolderSimpleUser } from "react-icons/pi";
 
 function CrearQr({ userId }) {
   const [data, setData] = useState('');
@@ -91,14 +90,22 @@ function CrearQr({ userId }) {
   };
 
   const handleSaveClick = async () => {
+    // Validar si los campos están vacíos
+    if (!nombre_ref || !description || !inputValue) {
+      setMessage('Rellene los campos');
+      setShowPopup(true);
+      setTimeout(() => setShowPopup(false), 2000); // El popup desaparece después de 2 segundos
+      return; // Detener la ejecución si faltan campos
+    }
+  
     try {
-      const response = await fetch('https://erika.tandempatrimonionacional.eu/gatsbyqr/v1/create-qr.php', {
+      const response = await fetch('https://carol.tandempatrimonionacional.eu/gatsbyqr/v1/create-qr.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          data : inputValue,
+          data: inputValue,
           nombre_ref,
           description,
           created_by: localStorage.getItem('tandem_id')
@@ -110,10 +117,11 @@ function CrearQr({ userId }) {
       console.error('Error creando código QR', error);
       setMessage('Error creando código QR');
     }
-
+  
     setShowPopup(true);
     setTimeout(() => setShowPopup(false), 2000); // El popup desaparece después de 2 segundos
   };
+  
 
   const containerStyle = {
     padding: "5px",
@@ -227,16 +235,17 @@ function CrearQr({ userId }) {
             <div className="qrcreado">
               <p>Color: {qrColor}</p>
               <p>Tamaño: {qrSize}</p>
-              <ModalExport qrRef={qrRef} />
-              <div className="row">
-                <Button color="warning" className="guardarqrr" onClick={handleSaveClick}>
-                  <LuSave size={30} />
-                  <p>GUARDAR</p>
-                </Button>
-                <Button color="light" className="guardarqrr" href='/AppQr'>
-                  <FaRedoAlt size={30} />
-                  <p>Nuevo QR</p>
-                </Button>
+              <div className="social">
+              <ModalExport qrRef={qrRef} /> 
+              <li className="list-inline-item" style={{ cursor: 'pointer' }}>
+                  <a ><LuSave fontSize={55} className="social-link" onClick={handleSaveClick}/>Guardar</a>
+                </li>
+                <li className="list-inline-item" href='/AppQr' style={{ cursor: 'pointer' }}>
+                  <a href="/AppQr" ><FaRedoAlt fontSize={50} className="social-link"/>Nuevo QR</a>
+                </li>
+                <li className="list-inline-item" style={{ cursor: 'pointer' }}>
+                  <a href="/ListadoQr"><PiFolderSimpleUser fontSize={55} className="social-link"/>Ver mis QR</a>
+                </li>
               </div>
             </div>
           </div>
@@ -245,11 +254,11 @@ function CrearQr({ userId }) {
 
       {showPopup && (
         <div className="popup">
-          ¡Se ha guardado con éxito!
+          {message}
         </div>
       )}
     </Layout>
   );
 }
 
-export default CrearQr;
+export default CrearQr

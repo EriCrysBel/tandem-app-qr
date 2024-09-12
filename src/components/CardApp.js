@@ -14,14 +14,14 @@ import '../components/CardApp.css';
 const CardApp = () => {
     return (
         <>
-            <h1 className="creacionqr">CREACIÓN DE QR</h1>
-            <div className="container" style={{backgroundColor:'none'}}>
-                <Card className="no-border" id="card1" style={{ width: '100%' }}>
+
+            <div className="container">
+                <Card className="no-border cardapp" id="card1">
                     <Row>
                         <Col>
                             <StaticImage src="../images/creandoqr.png" className="imagen1" />
                         </Col>
-                        <Col className="d-flex align-items-center justify-content-center">
+                        <Col className="columcontent">
                             <CardBody className="cuerpo text-center">
                                 <CardTitle tag="h5" className="crearpage">
                                     CREA CÓDIGOS QR

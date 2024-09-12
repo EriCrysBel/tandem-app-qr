@@ -19,11 +19,13 @@ const AppQr = () => {
     <>
       {role === 'admin' || role === 'employee' ? (
         <Layout>
+          <h1 className="creacionqr">CREACIÓN DE QR</h1>
           <CardApp />
         </Layout>
       ) : role === 'guest' ? (
         <Layout> 
           <div style={{minHeight:'78vh'}}>
+            <h1 className="creacionqr">INFORMACIÓN INSTITUCIONAL</h1>
             <Informacion />
           </div>
         </Layout>

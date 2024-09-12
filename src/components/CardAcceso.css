@@ -1,53 +1,48 @@
 .cardi{
   width: 100%;
-  min-height: 50vh;
-}
-.imagenacceso{
-  height: auto;
-  width: 100%;
+  height: 100%;
+  background-image: url(../images/acceso5.png);
+  background-size: cover;
+  position: relative;
+  text-align: center;
 }
 
 .buttonacceso{
+  bottom: 100px;
+  right: 280px;
   box-shadow: 3px 3px 3px 1px rgb(80, 78, 78);
+  position: absolute;
 }
 .buttonacceso p{
-  font-size: 20px;
   color: #ffffff;
   font-family: Century Gothic, serif; 
   font-weight: bold;
 }
 
 .eslogani{
-  font-size: 10px;
-  padding: .2em;
   color: #264295;
   border:#EEF6FC;
   background-Color: #bcdbf3;
   border-Radius:10px;
   position: absolute;
-  bottom: 73px;
-  text-align: center;
-  justify-content:center;
-font-family: Century Gothic, serif;
+  bottom: 0;
+  font-family: Century Gothic, serif;
 }
-.cardsubtitule{
-  position: relative;
-}
-@media (max-width:600px){
+
+@media (max-width:768px){
   .cardi{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: auto;
-  }
-  .imagenacceso{
-    height: auto;
-    width: 100%;
-  }
-  
+    height: 50vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+  } 
   .buttonacceso{
-    box-shadow: 3px 3px 3px 1px rgb(80, 78, 78);
-    left: 160px;
+    right: 190px;
+    position: absolute;
+    font-size: 20px;
   }
   .buttonacceso p{
     font-size: 20px;
@@ -55,38 +50,21 @@ font-family: Century Gothic, serif;
   }
   
   .eslogani{
-  
-    font-size: 21px;
-    padding: .2em;
-    color: #264295;
-    border:#EEF6FC;
+    height: auto;
+    font-size: 15px;
     background-Color: #bcdbf3;
     border-Radius:10px;
     position: absolute;
-    bottom: 35px;
-    left: 52px;
-    text-align: center;
-    justify-content:center;
+    bottom: 40px;
+    right: 120px;
   }
-  .cardsubtitule{
-    height: 50vh;
-    position: relative;
-  }
-  
   
 }
 
 @media (min-width:728px){
-.cardi{
-  min-height: 100vh;
-}
-.imagenacceso{
-  height: 550px;
-  width: 100%;
-}
+
 
 .buttonacceso{
-  left: 250px;
   box-shadow: 3px 3px 3px 1px rgb(80, 78, 78);
 }
 .buttonacceso p{
@@ -98,18 +76,11 @@ font-family: Century Gothic, serif;
 .eslogani{
   width: 100%;
   font-size: 30px;
-  padding: .2em;
   color: #264295;
   border:#EEF6FC;
   background-color: #bcdbf3;
-  position: absolute;
-  bottom: 50px;
-  width: 100%;
-  text-align: center;
-  justify-content:center;
+  bottom: 20px;
+
 }
-.cardsubtitule{
-  height: 70vh;
-  position: relative;
-}
+
 }

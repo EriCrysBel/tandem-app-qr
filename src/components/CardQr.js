@@ -141,7 +141,7 @@ const CardQr = ({ url, isGridView, onUserUpdated,darkMode }) => {
                       <strong>Descripción:</strong> {qrCode.description}
                     </p>
                     <p className="qrdata">
-                      <strong>Datos del QR: </strong> {qrCode.data}
+                      <strong>Datos de QR: </strong> {qrCode.data}
                     </p>
                     <p className="qrcreat">
                       <strong>Creado por: </strong> {qrCode.created_by}

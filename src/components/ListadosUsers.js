@@ -4,22 +4,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ChangeRoleUser from './ChangeRoleUser';
 import UpdateUser from './UpdateUser';
 import DeleteUser from './DeleteUser';
-
+import RegisterUser from './RegisterUser';
 import "./ListadosUsers.css";
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
 
 const CardContainer = styled.div`
-  border: 1px solid #ccc;
+    border: 1px solid ${props => props.darkMode ? '#444' : '#ccc'};
   border-radius: 12px;
   padding: 12px;
   width: 300px;
+  background-color: ${props => props.darkMode ? '#333' : 'white'};
+  color: ${props => props.darkMode ? 'white' : 'black'};
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease-in-out;
+
   &:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    background-color: #0a57ca7f;
-    color:white;
+    background-color: ${props => props.darkMode ? '#444' : '#0a57ca7f'};
+    color: white;
   }
   &.destacado {
     background-color: orange;
@@ -35,7 +38,7 @@ const CardTitle = styled.h2`
 const CardDescription = styled.div`
   margin: 0 0 10px 0;
   font-size: 1em;
-  color: #000;
+  color: ${props => props.darkMode ? 'white' : '#000'};
 `;
 
 const Button = styled.button`
@@ -54,7 +57,7 @@ const Button = styled.button`
   }
 `;
 
-function ListadosUsers({ url, isGridView }) {
+function ListadosUsers({ url, isGridView, darkMode }) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [users, setUsers] = useState([]);
@@ -131,7 +134,9 @@ function ListadosUsers({ url, isGridView }) {
               />
             </label>
           </div>
-
+          <li className="list-inline-item" style={{ cursor: 'pointer' }}>
+            <RegisterUser className="social-link" onUserRegistered={handleUserUpdated} />
+          </li>
           <div className={isGridView ? "card-grido" : "card-listo"} >
             {search(users).map((user) => (
               <>

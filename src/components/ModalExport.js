@@ -41,18 +41,14 @@ function ModalExport({ className, qrRef }) {
   let mensaje=""
   if(descargado){
     mensaje = 'Se ha descargado el QR'
-    // `<div className="alert alert-success" role="alert">
-    //   Se ha descargado correctamente
-    //   </div>`
+    
   }
   
   return (
     <div>
-      <Button color="success" className="guardarqr" onClick={toggle}>
-      <LuArrowDownToLine size={30}/>
-        <p>DESCARGAR</p>
-      </Button>
-      
+      <li className="list-inline-item" style={{ cursor: 'pointer' }} onClick={toggle}>
+        <a><LuArrowDownToLine fontSize={50} className="social-link"/>Descargar</a>
+      </li>
       {mensaje}
       
       <Modal

@@ -1,9 +1,10 @@
 .loginform{
     background-color:#92cbf773;
     border-radius: 20px;
-    width: 100%;
+    width:400px;
     height: auto;
     border: #02355c solid 0.2em;
+    min-height: 70vh;
   }
   
   .h1login{
@@ -35,7 +36,9 @@
     }
   .loginform{
     background-image: url(../images/accesologin.png);
-    background-size:cover;
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position:2px 100px;
     min-height: 73vh;
     display: grid;
     grid-template-areas:
