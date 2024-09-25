@@ -8,17 +8,15 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  pathPrefix: `/erikabello/tandemappqr`,
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Tandem App Qr`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Erika Crystal Bello Vargas`,
+      summary: `Esta aplicación permite que los empleados generen y administren códigos QR `,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `Aplicación Generador QR`,
+    siteUrl: `https://tandem-app-qr.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-image`,
