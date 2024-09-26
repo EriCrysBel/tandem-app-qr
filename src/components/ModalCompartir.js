@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import CompaQr from "./CompaQr.js"
 // import { StaticImage } from 'gatsby-plugin-image';
 import { GoShareAndroid } from "react-icons/go";
+import { withPrefix } from 'gatsby';
 
 function ModalCompartir(props) {
   const { className } = props;
@@ -36,7 +37,7 @@ function ModalCompartir(props) {
           <CompaQr/>
         </ModalBody>
         <ModalFooter>
-          <Button color="warning" href="../AppQr">
+          <Button color="warning" href={withPrefix("../AppQr")}>
             Volver a Inicio
           </Button>
           <Button color="dark" onClick={toggle}>

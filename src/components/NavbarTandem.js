@@ -12,6 +12,8 @@ import {
   NavLink as ReactstrapNavLink,
   Button,
 } from 'reactstrap';
+import { withPrefix } from 'gatsby';
+
 import styled from 'styled-components';
 import CerrarSesion from './CerrarSesion';
 import BannerUser from "../components/BannerUser";
@@ -84,7 +86,7 @@ function NavbarTandem({ darkMode, toggleDarkMode }) {
   return (
     <div>
       <Navbar darkMode={darkMode} expand="md">
-        <NavbarBrand href="/AppQr" style={{
+        <NavbarBrand href={withPrefix("/AppQr")} style={{
           backgroundColor: darkMode ? 'transparent' : 'black',
           borderRadius: '20px',
         }}>
@@ -95,7 +97,7 @@ function NavbarTandem({ darkMode, toggleDarkMode }) {
             borderRadius: '20px'
           }} />
         </NavbarBrand>
-        <NavLink darkMode={darkMode} href="/AreaPersonal">
+        <NavLink darkMode={darkMode} href={withPrefix("/AreaPersonal")}>
           <BannerUser darkMode={darkMode} />
         </NavLink>
         {isMobile ? (
@@ -104,10 +106,10 @@ function NavbarTandem({ darkMode, toggleDarkMode }) {
             <Collapse isOpen={isOpen} navbar>
               <Nav className="me-auto" navbar darkMode={darkMode}>
                 <ReactstrapNavItem>
-                  <NavLink darkMode={darkMode} href="/AppQr" className='navlink'>APP QR</NavLink>
+                  <NavLink darkMode={darkMode} href={withPrefix("/AppQr")} className='navlink'>APP QR</NavLink>
                 </ReactstrapNavItem>
                 <ReactstrapNavItem>
-                  <NavLink darkMode={darkMode} href="/AreaPersonal" className='navlink'>
+                  <NavLink darkMode={darkMode} href={withPrefix("/AreaPersonal")} className='navlink'>
                     ÁREA PERSONAL
                   </NavLink>
                 </ReactstrapNavItem>
@@ -128,10 +130,10 @@ function NavbarTandem({ darkMode, toggleDarkMode }) {
         ) : (
           <Nav className="ms-auto" navbar darkMode={darkMode}>
             <ReactstrapNavItem>
-              <NavLink darkMode={darkMode} href="/AppQr" className='navlink'>APP QR</NavLink>
+              <NavLink darkMode={darkMode} href={withPrefix("/AppQr")} className='navlink'>APP QR</NavLink>
             </ReactstrapNavItem>
             <ReactstrapNavItem>
-              <NavLink darkMode={darkMode} href="/AreaPersonal" className='navlink'>
+              <NavLink darkMode={darkMode} href={withPrefix("/AreaPersonal")} className='navlink'>
                 ÁREA PERSONAL
               </NavLink>
             </ReactstrapNavItem>

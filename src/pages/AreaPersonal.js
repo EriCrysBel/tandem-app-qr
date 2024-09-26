@@ -9,6 +9,7 @@ import { MdSupportAgent } from "react-icons/md";
 import { FaUsersGear } from "react-icons/fa6";
 import styled from 'styled-components';
 import CardEstilo from '../components/CardEstilo';
+import { withPrefix } from 'gatsby';
 
 const ArTitulo = styled.h1`
   margin-top: 0.1em;
@@ -142,7 +143,7 @@ const AreaPersonal = () => {
                   <>
                     <StaticImage src='../images/listadousuarios.jpg' alt="listado de usuarios" />
                     <Adminbutton>
-                      <Aadminbutton href='../ListadoUsuarios'>
+                      <Aadminbutton href={withPrefix('../ListadoUsuarios')}>
                         <FaUsersGear fontSize={50}/> Administrar Usuarios
                       </Aadminbutton>
                     </Adminbutton>

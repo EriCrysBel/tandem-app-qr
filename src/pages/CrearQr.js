@@ -11,6 +11,7 @@ import { LuSave } from "react-icons/lu";
 import { FaRedoAlt } from "react-icons/fa";
 import InstModal from "../components/InstModal";
 import { PiFolderSimpleUser } from "react-icons/pi";
+import { withPrefix } from "gatsby";
 
 function CrearQr({ userId }) {
   const [data, setData] = useState('');
@@ -240,11 +241,11 @@ function CrearQr({ userId }) {
               <li className="list-inline-item" style={{ cursor: 'pointer' }}>
                   <a ><LuSave fontSize={55} className="social-link" onClick={handleSaveClick}/>Guardar</a>
                 </li>
-                <li className="list-inline-item" href='/AppQr' style={{ cursor: 'pointer' }}>
-                  <a href="/AppQr" ><FaRedoAlt fontSize={50} className="social-link"/>Nuevo QR</a>
+                <li className="list-inline-item" href={withPrefix('/AppQr')} style={{ cursor: 'pointer' }}>
+                  <a href={withPrefix("/AppQr")} ><FaRedoAlt fontSize={50} className="social-link"/>Nuevo QR</a>
                 </li>
                 <li className="list-inline-item" style={{ cursor: 'pointer' }}>
-                  <a href="/ListadoQr"><PiFolderSimpleUser fontSize={55} className="social-link"/>Ver mis QR</a>
+                  <a href={withPrefix("/ListadoQr")}><PiFolderSimpleUser fontSize={55} className="social-link"/>Ver mis QR</a>
                 </li>
               </div>
             </div>

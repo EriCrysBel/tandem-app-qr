@@ -1,10 +1,12 @@
+import { withPrefix } from 'gatsby';
 import React from 'react';
 import { RiShutDownLine } from "react-icons/ri";
+import { withPrefix } from 'gatsby';
 
 const CerrarSesion = ({ darkMode }) => {
   const handleCerrarSesion = () => {
     if (typeof window !== 'undefined') {
-      window.location.href = '/';
+      window.location.href = withPrefix('../Login');
       localStorage.removeItem('tandem_id');
       localStorage.removeItem('tandem_nombre');
       localStorage.removeItem('tandem_email');

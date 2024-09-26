@@ -3,7 +3,7 @@ import Layout from "../components/layout"
 import NavbarInicio from "../components/NavbarInicio"
 import FooterInicio from "../components/FooterInicio"
 import "./Paginas.css"
-import GeneradorQrSteps from "../components/GeneradorQrSteps/GeneradorQrSteps";
+
 
 const Politica =()=>{
     const [role, setRole] = useState(null);
@@ -18,7 +18,6 @@ const Politica =()=>{
         {role === 'admin' || role === 'employee'|| role === 'guest' ?
 
         <Layout>
-            <GeneradorQrSteps/>
             <div className="containerpaginas">
             <h1 className="h1pages">POLÍTICA DE PRIVACIDAD</h1>
             <h2 className="h2pages">PROTECCIÓN DE DATOS</h2>

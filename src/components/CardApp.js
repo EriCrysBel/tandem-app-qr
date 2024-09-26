@@ -10,6 +10,7 @@ import {
     Col,
 } from 'reactstrap';
 import '../components/CardApp.css';
+import { withPrefix } from "gatsby";
 
 const CardApp = () => {
     return (
@@ -29,7 +30,7 @@ const CardApp = () => {
                                 <CardText className="texto">
                                     Crea códigos QR personalizados para compartir información.
                                 </CardText>
-                                <Button href='../CrearQr' color="warning">
+                                <Button href={withPrefix('../CrearQr')} color="warning">
                                     CREAR QR
                                 </Button>
                             </CardBody>
@@ -46,7 +47,7 @@ const CardApp = () => {
                                 <CardText className="texto">
                                     Embárcate en un viaje interactivo por Aranjuez con nuestro listado de códigos QR.
                                 </CardText>
-                                <Button color="warning"  href='../ListadoQr'>
+                                <Button color="warning"  href={withPrefix('../ListadoQr')}>
                                     LISTADO QR
                                 </Button>
                             </CardBody>

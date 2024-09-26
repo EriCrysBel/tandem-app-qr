@@ -4,12 +4,12 @@ import RegisterModal from '../components/RegisterModal';
 import { Button, Col, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import NavbarInicio from "../components/NavbarInicio";
 import FooterInicio from "../components/FooterInicio";
+import { withPrefix } from 'gatsby';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
-
   const handleLogin = async () => {
     try {
       const response = await fetch('https://erika.tandempatrimonionacional.eu/gatsbyqr/v1/login-user.php', {
@@ -30,7 +30,7 @@ const Login = () => {
           localStorage.setItem('tandem_role', respuesta.user.role);
         }
         setMessage('Login exitoso para:' + respuesta.user.nombre);
-        window.location.href = '/AppQr';
+        window.location.href = withPrefix('/AppQr');
       } else {
         setMessage('Credenciales incorrectas');
       }
@@ -85,7 +85,7 @@ const Login = () => {
             <br />
             <p>{message}</p>
             <div>
-              <a href='../ChangePassword'>¿Has olvidado tu contraseña?</a>
+              <a href={withPrefix('../ChangePassword')}>¿Has olvidado tu contraseña?</a>
             </div>
             <div className='registro mt-5'>
               <RegisterModal buttonText="Crear cuenta nueva"/>

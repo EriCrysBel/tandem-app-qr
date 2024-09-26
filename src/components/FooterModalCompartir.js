@@ -4,6 +4,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import CompaQr from "./CompaQr.js"
 
 import { GoShareAndroid } from "react-icons/go";
+import { withPrefix } from 'gatsby';
 
 function FooterModalCompartir(props) {
   const [modal, setModal] = useState(false);
@@ -26,7 +27,7 @@ function FooterModalCompartir(props) {
         </ModalBody>
         
         <ModalFooter>
-          <Button color="warning" href="/">
+          <Button color="warning" href={withPrefix("/")}>
             Volver a Inicio
           </Button>
           <Button  onClick={toggle}>

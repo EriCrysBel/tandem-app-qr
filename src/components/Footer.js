@@ -1,5 +1,6 @@
 import React from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import { withPrefix } from "gatsby"
 
 const Footer = () => {
   const footerStyles = {
@@ -62,7 +63,7 @@ const Footer = () => {
             gridArea:'s32',width:"100%"
           }} ><StaticImage src="../images/youtube.png" style={{width:'20px'}} alt="YouTube" className="logo" /></a>
 
-          <a href="../Politica" style={{ 
+          <a href={withPrefix("../Politica")} style={{ 
             gridArea: "s33",
             width:"100%",   
             color: "#E9E9E9",
@@ -70,7 +71,7 @@ const Footer = () => {
             fontFamily: "Georgia, serif",
             fontWeight: "normal",
             margin: "0.5em", }}>Política de Privacidad</a>
-          <a href="../Cookies" style={{ 
+          <a href={withPrefix("../Cookies")} style={{ 
             gridArea: "s34",
             width:"100%",     
             color: "#E9E9E9",
@@ -78,7 +79,7 @@ const Footer = () => {
             fontFamily: "Georgia, serif",
             fontWeight: "normal",
             margin: "0.5em", }}>Cookies</a>
-          <a href="../Accesibilidad" style={{ 
+          <a href={withPrefix("../Accesibilidad")} style={{ 
             gridArea: "s4",
             width:"100%",     
             color: "#E9E9E9",
@@ -86,7 +87,7 @@ const Footer = () => {
             fontFamily: "Georgia, serif",
             fontWeight: "normal",
             margin: "0.5em", }}>Accesibilidad</a>
-          <a href="../AvisoLegal" style={{ 
+          <a href={withPrefix("../AvisoLegal")} style={{ 
             gridArea: "s5", 
             width:"100%",
             color: "#E9E9E9",

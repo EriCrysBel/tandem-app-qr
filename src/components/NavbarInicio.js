@@ -12,6 +12,8 @@ import {
   NavLink as ReactstrapNavLink,
   Button,
 } from 'reactstrap';
+import { withPrefix } from 'gatsby';
+
 import styled from 'styled-components';
 import ModalSoporte from './ModalSoporte'; 
 import './NavbarInicio.css';
@@ -96,7 +98,7 @@ function NavbarInicio(args) {
   return (
     <div>
       <Navbar darkMode={darkMode} expand="md">
-        <NavbarBrand href="/" style={{
+        <NavbarBrand href={withPrefix("/")} style={{
           backgroundColor: darkMode ? 'transparent' : 'black',
           borderRadius: '20px',
         }}>
@@ -118,10 +120,10 @@ function NavbarInicio(args) {
             <Collapse isOpen={isOpen} navbar>
               <Nav className="me-auto" navbar darkMode={darkMode}>
                 <ReactstrapNavItem>
-                  <NavLink darkMode={darkMode} href="/InfoInstitucional" className='navlink'>Información Institucional</NavLink>
+                  <NavLink darkMode={darkMode} href={withPrefix("/InfoInstitucional")} className='navlink'>Información Institucional</NavLink>
                 </ReactstrapNavItem>
                 <ReactstrapNavItem>
-                  <NavLink darkMode={darkMode} href="/Login" className='navlink'>APP QR</NavLink>
+                  <NavLink darkMode={darkMode} href={withPrefix("/Login")} className='navlink'>APP QR</NavLink>
                 </ReactstrapNavItem>
                 <ReactstrapNavItem>
                   <NavLink darkMode={darkMode} href="#" onClick={toggleModal}>SOPORTE TÉCNICO</NavLink>
@@ -135,10 +137,10 @@ function NavbarInicio(args) {
         ) : (
           <Nav className="ms-auto" navbar darkMode={darkMode}>
             <ReactstrapNavItem>
-              <NavLink darkMode={darkMode} href="/InfoInstitucional" className='navlink'>Información Institucional</NavLink>
+              <NavLink darkMode={darkMode} href={withPrefix("/InfoInstitucional")} className='navlink'>Información Institucional</NavLink>
             </ReactstrapNavItem>
             <ReactstrapNavItem>
-              <NavLink darkMode={darkMode} href="/Login" className='navlink'>APP QR</NavLink>
+              <NavLink darkMode={darkMode} href={withPrefix("/Login")} className='navlink'>APP QR</NavLink>
             </ReactstrapNavItem>
             <ReactstrapNavItem>
               <NavLink darkMode={darkMode} href="#" onClick={toggleModal}>SOPORTE TÉCNICO</NavLink>
